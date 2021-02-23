@@ -4,10 +4,8 @@
 
     class LoginManager extends Manager
     {
-        public function loginmanager()
+        public function checkCredentials()
         {
-            $db = $this->dbConnect();
-
             if (!empty($_POST)) {
                 extract($_POST);
                 $valid = true;
@@ -28,7 +26,7 @@
                 }
 
                 if ($valid){
-                    $req = $db->prepare('SELECT id_user, password FROM user WHERE email = :email');
+                    $req = $this->connection->prepare('SELECT id_user, password FROM user WHERE email = :email');
                     $req->execute(array(
                         'email' => $email));
                     $resultat = $req->fetch();
