@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Qualy';
+    src: url('../fonts/Qualy-Bold.woff2') format('woff2'),
+    url('../fonts/Qualy-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed-Light.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    min-height: 100vh;
+}
+
+/* ----- head.php ----- */
+
+    .navbar-brand {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-family: Qualy, Arial, 'sans-serif';
+    }
+
+    nav a {
+        font-family: "Roboto Condensed", Arial, 'sans-serif';
+        font-size: 20px;
+    }
+
+    nav{
+        padding-right: 15px;
+    }
+
+    .signinbutton, .loginbutton{
+        margin-left: 10px;
+    }
+
+/* ----- Foot.php ----- */
+
+    footer{
+        padding-top: 10px;
+        font-family: "Roboto Condensed", Arial, 'sans-serif';
+    }
+
+    footer p{
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    footer a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    footer ul{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .connexion{
+        text-align: right;
+        padding-right: 30px;
+    }
+
+    .connexion a{
+        text-transform: uppercase;
+    }
+
+/* ----- Homepage.php ----- */
+    /* Hero */
+
+        .hero {
+            height: 770px;
+            background-image: url("../pictures/hero_landscape.jpg");
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 28px;
+            font-family: "Roboto Condensed", Arial, 'sans-serif';
+        }
+
+    /* Logo */
+
+        .logo_zebre{
+            margin-bottom: 40px;
+        }
+
+    /* Call to Action */
+
+        .calltoaction:hover{
+            background-color: silver;
+        }
+
+/* ----- contact.php ----- */
+
+    .contact_bloc{
+        padding: 30px;
+    }
+
+    form .btn{
+        margin-top: 10px;
+    }
+
+/* ----- Aboutme.php ----- */
+    /* Picture */
+        .logo_zebre_aboutme{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+    /* Containers */
+        .rayure_culture{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .rayure_formation{
+            margin-bottom: 20px;
+        }
+
+        .rayure_dev{
+            margin-bottom: 20px;
+        }
+
+        .end_aboutme{
+            margin-bottom: 20px;
+        }
+
+        .bio p{
+            font-family: Roboto, Arial, 'sans-serif';
+            margin-bottom: 20px;
+        }
+    /* links */
+
+        .init_CV a{
+            color: black;
+            font-style: italic;
+        }
+
+        .end_aboutme a{
+            color: black;
+            font-style: italic;
+        }
+
+/* ----- legals.php ----- */
+
+    .infos_legales{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .infos_legales a{
+        color: black;
+    }
+
+/* ----- blog.php ----- */
+    /* Hero */
+
+        .hero_blog {
+            height: 400px;
+            background-image: url("../pictures/sunset.jpg");
+            background-size: cover;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .hero-text-blog {
+            text-align: left;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 80%;
+            margin: auto;
+        }
+
+        .hero-text-blog h4{
+            font-family: Qualy, Arial, 'sans-serif';
+        }
+
+        .hero-text-blog p{
+            font-family: Roboto, Arial, 'sans-serif';
+        }
+
+    /* cards */
+
+        .actu{
+            margin-bottom: 50px;
+        }
+
+        .actu_init_universe{
+            margin-top: 40px;
+        }
+
+/* ----- error404.php ----- */
+
+    .hero-404 {
+        height: 670px;
+        background-image: url("../pictures/hero_landscape.jpg");
+        background-size: cover;
+        position: relative;
+    }
+
+    .hero-text-404 {
+        text-align: center;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 28px;
+        font-family: "Roboto Condensed", Arial, 'sans-serif';
+    }
+
+/* ----- blogconnexion.php ----- */
+
+   .adminconnect{
+       min-height: 700px;
+       --bs-gutter-x: 0rem;
+   }
+
+/* ----- login.php ----- */
+
+    .loginspace{
+        min-height: 700px;
+    }
+
+    .login button, .signin button{
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
