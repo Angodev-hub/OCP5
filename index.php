@@ -11,43 +11,43 @@ switch ($page) {
         homeIndex();
         break;
     case 'blog' :
-        require('controllers/postscontroller.php');
+        require('controllers/PostsController.php');
         listposts();
         break;
     case 'contact' :
-        require('controllers/contactcontroller.php');
+        require('controllers/ContactController.php');
         contactIndex();
         break;
     case 'newpost' :
-        require('controllers/addpostcontroller.php');
+        require('controllers/AddpostController.php');
         newpost();
         break;
     case 'post' :
-        require('controllers/postcontroller.php');
+        require('controllers/PostController.php');
         post();
         break;
     case 'editpost' :
-        require('controllers/dashboardcontroller.php');
+        require('controllers/DashboardController.php');
         editpost();
         break;
     case 'administratorspace' :
-        require('controllers/administratorconnexioncontroller.php');
+        require('controllers/AdministratorconnexionController.php');
         adminconnect();
         break;
     case 'aboutme' :
-        require ('controllers/aboutmecontroller.php');
+        require('controllers/AboutmeController.php');
         aboutme();
         break;
     case 'legals' :
-        require ('controllers/legalscontroller.php');
+        require('controllers/LegalsController.php');
         legals();
         break;
     case 'login' :
-        require ('controllers/logincontroller.php');
+        require('controllers/LoginController.php');
         login();
         break;
     case 'signin' :
-        require ('controllers/signincontroller.php');
+        require('controllers/SigninController.php');
         signin();
         break;
     default :

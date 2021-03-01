@@ -27,7 +27,7 @@ require_once('views/head.php')
                    </div>
                    <div class="row">
                        <div class="col-lg-12">
-                           <form action="../controllers/contactcontroller.php" method="post">
+                           <form action="../controllers/ContactController.php" method="post">
                                <fieldset>
                                    <legend>Un commentaire ? Une suggestion ? Un projet ?</legend>
                                    <div class="form-group">

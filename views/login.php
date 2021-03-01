@@ -8,7 +8,7 @@
             </div>
             <div class="col-lg-6">
                 <h4>Déjà un compte ? Authentifiez-vous</h4>
-                <form class="login" method="post" action="controllers/logincontroller.php">
+                <form class="login" method="post" action="index.php?page=login">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Adresse mail :</label>
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Votre adresse mail">
@@ -22,7 +22,7 @@
                 </form>
                 <div class="row">
                     <h4>Envie de participer ? Inscrivez-vous</h4>
-                    <form class="signin" method="post" action="controllers/signincontroller.php">
+                    <form class="signin" method="post" action="index.php?page=signin">
                             <div class="form-group">
                                 <label for="username">Choisissez votre nom d'utilisateur :</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="JohnDoe">
