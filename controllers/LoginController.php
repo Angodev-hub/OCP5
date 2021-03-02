@@ -41,7 +41,7 @@ function login()
             session_start();
             $_SESSION['email'] = $result['email'];
             $_SESSION['password'] = $result['password'];
-            echo 'Vous êtes connecté !';
+            $connect = ("Vous êtes connecté !");
             // Redirection vers la page d'accueil
             Header('Location: index.php');
         } else {
