@@ -1,6 +1,6 @@
 <?php
 
-require_once('../models/LoginManager.php');
+require_once('./models/LoginManager.php');
 
 function login()
 {
@@ -52,7 +52,8 @@ function login()
                 $er_login = ("Mauvais identifiant ou mot de passe !");
             }
         }
+    } else {
+        // Si le formulaire est vide on appelle la vue
+        require_once('views/login.php');
     }
-    // On appelle la vue
-    require_once('views/login.php');
 }

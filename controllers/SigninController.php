@@ -1,5 +1,5 @@
 <?php
-require_once('../models/SigninManager.php');
+require_once('./models/SigninManager.php');
 
     function signin()
     {
@@ -65,8 +65,9 @@ require_once('../models/SigninManager.php');
                 $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
                 Header('Location: login.php');
             }
+        } else {
+            require_once('views/login.php');
         }
-        require_once('views/login.php');
     }
 
 
