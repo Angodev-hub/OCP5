@@ -5,7 +5,10 @@ require_once('./models/SigninManager.php');
     {
         // On récupère les données du formulaire
         if (!empty($_POST['signin'])) {
-            extract($_POST);
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $passwordconf = $_POST['passwordconf'];
             $valid = true;
 
             // On valide la saisie
@@ -17,12 +20,12 @@ require_once('./models/SigninManager.php');
             if (empty($email)) {
                 $valid = false;
                 $er_email = ("L'adresse email est obligatoire");
-            } elseif (!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $mail)) {
+            } elseif (!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $email)) {
                 $valid = false;
                 $er_email = ("L'adresse mail n'est pas valide");
             } else {
                 $req_mail = $this->connection->query("SELECT email FROM user WHERE email = ?",
-                    array($mail));
+                    array($email));
 
                 $req_mail = $req_mail->fetch();
 
@@ -46,10 +49,13 @@ require_once('./models/SigninManager.php');
             $password = htmlspecialchars(trim($password));
             $passwordconf = htmlspecialchars(trim($passwordconf));
 
+            // On place les données dans un array
+            $info = array('username' => $username, 'email' => $email, 'password' => $password);
+
             // On appelle le modèle qui permet d'ajouter les informations en BDD
             if ($valid){
                 $signinManager = new SigninManager();
-                $result = $signinManager->subscribe();
+                $result = $signinManager->subscribe($info);
             }
 
             if($result) {
@@ -63,7 +69,7 @@ require_once('./models/SigninManager.php');
             } else {
                 // Erreur
                 $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
-                Header('Location: login.php');
+                Header('Location: index.php?page=error');
             }
         } else {
             require_once('views/login.php');

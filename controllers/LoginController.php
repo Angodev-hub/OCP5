@@ -34,10 +34,10 @@ function login()
 
         // On appelle le modèle qui permet de vérifier l'existence du couple email / password en BDD
         $loginManager = new LoginManager();
-        $result = $loginManager->checkCredentials();
+        $result = $loginManager->checkCredentials($email);
 
         if (!$result){
-            $er_login = ("Mauvais identifiant ou mot de passe !");
+            $er_login = ("Aucun compte trouvé.");
         }else{
             if($IsPasswordCorrect) {
                 // Succès

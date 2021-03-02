@@ -3,17 +3,27 @@
 
     class SigninManager extends Manager
     {
-        public function subscribe()
+        public function subscribe($info)
         {
-            $hash_pass = password_hash($password, PASSWORD_DEFAULT);
-            $created_at = date('d-m-Y');
-            $id_role = 1;
+            try {
+                // On commence une transaction
+                $this->connection->beginTransaction();
 
-            $req = $this->connection->prepare('INSERT INTO user(username, password, email, created_at, id_role) VALUES(:username, :password, :email, CURDATE(), :id_role)');
-            $req->execute(array(
-                'username' => $username,
-                'pass' => $hash_pass,
-                'email' => $email,
-                'id_role' => $id_role));
+                // On exécute la requête
+                $req = $this->connection->prepare('INSERT INTO user(username, password, email, created_at, id_role) VALUES(:username, :password, :email, CURDATE(), :id_role)');
+                $req->execute(array(
+                    'username' => $username,
+                    'pass' => $hash_pass,
+                    'email' => $email,
+                    'id_role' => $id_role));
+
+                // On exécute la transaction
+                $this->connection->commit();
+            } catch (PDOException $exception) {
+                // On annule la transaction
+                $this->connection->rollback();
+
+                echo "Erreur : " . $exception->getMessage();
+            }
         }
     }
