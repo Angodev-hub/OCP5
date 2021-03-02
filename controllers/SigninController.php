@@ -4,7 +4,7 @@ require_once('./models/SigninManager.php');
     function signin()
     {
         // On récupère les données du formulaire
-        if (!empty($_POST['signin'])) {
+        if (isset($_POST['signin'])) {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -49,7 +49,7 @@ require_once('./models/SigninManager.php');
             $password = htmlspecialchars(trim($password));
             $passwordconf = htmlspecialchars(trim($passwordconf));
 
-            // On place les données dans un array
+            // On place les données dans un tableau
             $info = array('username' => $username, 'email' => $email, 'password' => $password);
 
             // On appelle le modèle qui permet d'ajouter les informations en BDD
@@ -70,6 +70,7 @@ require_once('./models/SigninManager.php');
                 // Erreur
                 $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
                 Header('Location: index.php?page=error');
+                echo 'ça marche';
             }
         } else {
             require_once('views/login.php');
