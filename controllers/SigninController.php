@@ -57,12 +57,13 @@ require_once('../models/SigninManager.php');
                 session_start();
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['password'] = $result['password'];
-                echo 'Votre compte a été créé avec succès, vous dorénavant connecté.';
+                $conf_subscribe = "Votre compte a été créé avec succès, vous dorénavant connecté.";
                 // Redirection vers la page d'accueil
                 Header('Location: index.php');
             } else {
                 // Erreur
-                echo 'Votre compte n\'a pas pu être créé. Veuillez recommencer.' ;
+                $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
+                Header('Location: login.php');
             }
         }
         require_once('views/login.php');

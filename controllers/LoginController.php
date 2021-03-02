@@ -36,17 +36,21 @@ function login()
         $loginManager = new LoginManager();
         $result = $loginManager->checkCredentials();
 
-        if($result) {
-            // Succès
-            session_start();
-            $_SESSION['email'] = $result['email'];
-            $_SESSION['password'] = $result['password'];
-            $connect = ("Vous êtes connecté !");
-            // Redirection vers la page d'accueil
-            Header('Location: index.php');
-        } else {
-            // Erreur
-            echo 'Mauvais identifiant ou mot de passe !';
+        if (!$result){
+            $er_login = ("Mauvais identifiant ou mot de passe !");
+        }else{
+            if($IsPasswordCorrect) {
+                // Succès
+                session_start();
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['password'] = $result['password'];
+                $connect = ("Vous êtes connecté !");
+                // Redirection vers la page d'accueil
+                Header('Location: index.php');
+            } else {
+                // Erreur
+                $er_login = ("Mauvais identifiant ou mot de passe !");
+            }
         }
     }
     // On appelle la vue
