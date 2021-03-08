@@ -19,7 +19,7 @@ switch ($page) {
         contactIndex();
         break;
     case 'newpost' :
-        require('controllers/AddpostController.php');
+        require('controllers/DashboardController.php');
         newpost();
         break;
     case 'post' :
@@ -49,6 +49,11 @@ switch ($page) {
     case 'signin' :
         require('controllers/SigninController.php');
         signin();
+        break;
+
+    case 'dashboard' :
+        require('controllers/DashboardController.php');
+        dashboard();
         break;
     default :
         require('controllers/ErrorController.php');

@@ -13,6 +13,7 @@
                 $username = $info['username'];
                 $email = $info['email'];
                 $password = $info['password'];
+                $id_role = 1;
 
                 $hash_pass = password_hash($password, PASSWORD_DEFAULT);
 

@@ -69,8 +69,7 @@ require_once('./models/SigninManager.php');
             } else {
                 // Erreur
                 $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
-                Header('Location: index.php?page=error');
-                echo 'ça marche';
+                Header('Location: index.php?page=signin');
             }
         } else {
             require_once('views/login.php');
