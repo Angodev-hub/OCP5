@@ -47,11 +47,11 @@ function create()
 
         if ($result) {
             // Succès
-            Header('Location: index.php?page=error');
+            Header('Location: index.php?page=dashboard');
             echo "L'article a bien été ajouté";
         } else {
             // Erreur
-            Header('Location: index.php?page=error');
+            Header('Location: index.php?page=dashboard');
             echo "L'article n'a pas pu être enregistré.";
         }
     } else {

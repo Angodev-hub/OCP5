@@ -24,8 +24,10 @@ function adminconnect(){
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-        $adminManager = new AdminManager();
-        $adminManager->checkCredentials($email, $password);
+        if ($valid){
+            $adminManager = new AdminManager();
+            $adminManager->checkCredentials($email, $password);
+        }
 
         // Succès
         if ($isPasswordCorrect and $result_id_role = 2) {
