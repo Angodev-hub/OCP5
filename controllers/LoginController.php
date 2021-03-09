@@ -2,8 +2,7 @@
 
 require_once('./models/LoginManager.php');
 
-function login()
-{
+function login(){
     // Si le formulaire a été soumis
     if (isset($_POST['login'])) {
         // On récupère les données du formulaire

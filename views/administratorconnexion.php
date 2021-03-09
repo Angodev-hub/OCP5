@@ -8,7 +8,7 @@ require_once('views/head.php')
             </div>
             <div class="col-lg-5 login_form">
                 <h3>Connexion à l'espace administrateur</h3>
-                <form method="post" name="adminaccess" action="controllers/administratorconnexioncontroller.php">
+                <form method="post" name="adminaccess" action="index.php?page=administratorspace">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Adresse Email</label>
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre adresse mail">
