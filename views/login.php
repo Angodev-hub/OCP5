@@ -22,7 +22,7 @@
                 </form>
                 <div class="row">
                     <h4>Envie de participer ? Inscrivez-vous</h4>
-                    <form class="signin" name="signin" method="post" action="index.php?page=signin">
+                    <form class="signin" name="register" method="post" action="index.php?page=register">
                             <div class="form-group">
                                 <label for="username">Choisissez votre nom d'utilisateur :</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="JohnDoe">
@@ -39,7 +39,7 @@
                                 <label for="exampleInputPassword1">Confirmez votre mot de passe</label>
                                 <input type="password" class="form-control" id="passwordconf" name="passwordconf" placeholder="Votre mot de passe">
                             </div>
-                            <button type="submit" name="signin" class="btn btn-dark">Valider</button>
+                            <button type="submit" name="register" class="btn btn-dark">Valider</button>
                     </form>
                 </div>
             </div>

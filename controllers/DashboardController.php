@@ -6,9 +6,9 @@ function dashboard(){
     require ('views/dashboard.php');
 }
 
-function newpost()
+function create()
 {
-    if (isset($_POST['newpost'])) {
+    if (!empty($_POST['newpost'])) {
         $title = $_POST['title'];
         $description = $_POST['description'];
         $content = $_POST['content'];
@@ -37,12 +37,12 @@ function newpost()
         $content = htmlspecialchars($content);
 
         // On place les données dans un tableau
-        $postinfo = array('title' => $title, 'description' => $description, 'content' => $content);
+        $post = array('title' => $title, 'description' => $description, 'content' => $content);
 
         // On appelle le modèle qui permet d'ajouter les informations en BDD
         if ($valid) {
             $dashboardManager = new DashboardManager();
-            $result = $dashboardManager->addpost($postinfo);
+            $result = $dashboardManager->addpost($post);
         }
 
         if ($result) {
@@ -57,4 +57,8 @@ function newpost()
     } else {
         require_once('index.php?page=dashboard');
     }
+}
+
+function edit(){
+
 }

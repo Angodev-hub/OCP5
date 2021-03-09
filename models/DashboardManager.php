@@ -3,16 +3,16 @@
 
     class DashboardManager extends Manager
     {
-        public function addpost($postinfo)
+        public function addpost($post)
         {
             try {
                 // On commence une transaction
                 $this->connection->beginTransaction();
 
                 // On exécute la requête
-                $title = $postinfo['title'];
-                $description = $postinfo['description'];
-                $content = $postinfo['content'];
+                $title = $post['title'];
+                $description = $post['description'];
+                $content = $post['content'];
 
                 $req = $this->connection->prepare('INSERT INTO post(title, description, content, created_at) VALUES(:title, :description, :content, CURDATE()');
                 $req->execute(array(

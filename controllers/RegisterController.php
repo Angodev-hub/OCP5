@@ -1,10 +1,10 @@
 <?php
-require_once('./models/SigninManager.php');
+require_once('./models/RegisterManager.php');
 
-    function signin()
+    function registration()
     {
         // On récupère les données du formulaire
-        if (isset($_POST['signin'])) {
+        if (isset($_POST['register'])) {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -47,15 +47,14 @@ require_once('./models/SigninManager.php');
             $username = htmlspecialchars(trim($username));
             $email = htmlspecialchars(trim($email));
             $password = htmlspecialchars(trim($password));
-            $passwordconf = htmlspecialchars(trim($passwordconf));
 
             // On place les données dans un tableau
-            $info = array('username' => $username, 'email' => $email, 'password' => $password);
+            $user = array('username' => $username, 'email' => $email, 'password' => $password);
 
             // On appelle le modèle qui permet d'ajouter les informations en BDD
             if ($valid){
-                $signinManager = new SigninManager();
-                $result = $signinManager->subscribe($info);
+                $registerManager = new RegisterManager();
+                $result = $registerManager->subscribe($user);
             }
 
             if($result) {
@@ -63,13 +62,13 @@ require_once('./models/SigninManager.php');
                 session_start();
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['password'] = $result['password'];
-                $conf_subscribe = "Votre compte a été créé avec succès, vous dorénavant connecté.";
+                $conf_subscribe = "Votre compte a été créé avec succès, vous êtes dorénavant connecté.";
                 // Redirection vers la page d'accueil
                 Header('Location: index.php');
             } else {
                 // Erreur
                 $er_subscribe = "Votre compte n'a pas pu être créé. Veuillez recommencer.";
-                Header('Location: index.php?page=signin');
+                Header('Location: index.php?page=register');
             }
         } else {
             require_once('views/login.php');

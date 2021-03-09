@@ -1,18 +1,18 @@
 <?php
     require_once('Manager.php');
 
-    class SigninManager extends Manager
+    class RegisterManager extends Manager
     {
-        public function subscribe($info)
+        public function subscribe($user)
         {
             try {
                 // On commence une transaction
                 $this->connection->beginTransaction();
 
                 // On exécute la requête
-                $username = $info['username'];
-                $email = $info['email'];
-                $password = $info['password'];
+                $username = $user['username'];
+                $email = $user['email'];
+                $password = $user['password'];
                 $id_role = 1;
 
                 $hash_pass = password_hash($password, PASSWORD_DEFAULT);

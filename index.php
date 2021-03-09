@@ -18,17 +18,17 @@ switch ($page) {
         require('controllers/ContactController.php');
         contactIndex();
         break;
-    case 'newpost' :
+    case 'create' :
         require('controllers/DashboardController.php');
-        newpost();
+        create();
         break;
     case 'post' :
         require('controllers/PostController.php');
         post();
         break;
-    case 'editpost' :
+    case 'edit' :
         require('controllers/DashboardController.php');
-        editpost();
+        edit();
         break;
     case 'administratorspace' :
         require('controllers/AdministratorconnexionController.php');
@@ -46,11 +46,10 @@ switch ($page) {
         require('controllers/LoginController.php');
         login();
         break;
-    case 'signin' :
-        require('controllers/SigninController.php');
-        signin();
+    case 'register' :
+        require('controllers/RegisterController.php');
+        registration();
         break;
-
     case 'dashboard' :
         require('controllers/DashboardController.php');
         dashboard();

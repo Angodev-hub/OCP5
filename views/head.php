@@ -28,5 +28,5 @@
                 </div>
             </div>
             <a href="index.php?page=login" class="btn btn-outline-light loginbutton active" role="button" aria-pressed="true">Connexion</a>
-            <a href="index.php?page=signin" class="btn btn-outline-light signinbutton active" role="button" aria-pressed="true">Inscription</a>
+            <a href="index.php?page=register" class="btn btn-outline-light signinbutton active" role="button" aria-pressed="true">Inscription</a>
         </nav>
