@@ -3,6 +3,19 @@
 
     class RegisterManager extends Manager
     {
+        public function checkemail($email){
+            $req = $this->connection->prepare("SELECT email FROM user WHERE email = :email");
+            $req->execute(array(
+                'email' => $email));
+            $result = $req->fetch(PDO::FETCH_ASSOC);
+
+            if ($result['email'] <> "") {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         public function subscribe($user)
         {
             try {

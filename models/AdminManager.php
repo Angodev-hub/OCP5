@@ -11,11 +11,16 @@ class AdminManager extends Manager
             'email' => $email));
         $result = $req->fetch(PDO::FETCH_ASSOC);
 
-        $IsPasswordCorrect = password_verify($password, $result);
+        $isPasswordCorrect = password_verify($password, $result);
 
         $req = $this->connection->prepare('SELECT id_role FROM user WHERE email = :email');
         $req->execute(array(
             'email' => $email));
         $result_id_role = $req->fetch(PDO::FETCH_ASSOC);
+
+        return [
+            'isPasswordCorrect' => $isPasswordCorrect,
+            'result_id_role' => $result_id_role,
+        ];
     }
 }

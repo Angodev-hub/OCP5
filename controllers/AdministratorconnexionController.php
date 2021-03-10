@@ -26,11 +26,11 @@ function adminconnect(){
 
         if ($valid){
             $adminManager = new AdminManager();
-            $adminManager->checkCredentials($email, $password);
+            $result = $adminManager->checkCredentials($email, $password);
         }
 
         // Succès
-        if ($isPasswordCorrect and $result_id_role = 2) {
+        if ($result['isPasswordCorrect'] and $result['result_id_role'] = 2) {
             echo "Vous êtes identifié. Vous pouvez accéder à l'espace administrateur";
             header('Location: index.php?page=dashboard');
         }
@@ -54,4 +54,3 @@ function adminconnect(){
         require_once('views/administratorconnexion.php');
     }
 }
-?>
